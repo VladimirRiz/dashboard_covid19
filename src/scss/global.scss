@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
 
 @font-face {
@@ -8,9 +14,18 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
   font-family: $font-stack;
   #logo {
     width: 10rem;
   }
+}
 
+button{
+  outline: none;
 }
