@@ -2,9 +2,12 @@
   <%= _.template(require('./../includes/header.html').default)(data) %>
 
     <div class="container">
-      <%= _.template(require('./../includes/death.html').default)(data) %>
-        <%= _.template(require('./../includes/cases.html').default)(data) %>
-          <%= _.template(require('./../includes/recovered.html').default)(data) %>
+      <%= _.template(require('./../includes/nav.html').default)(data) %>
+        <div class="container__info">
+          <%= _.template(require('./../includes/death.html').default)(data) %>
+            <%= _.template(require('./../includes/cases.html').default)(data) %>
+              <%= _.template(require('./../includes/recovered.html').default)(data) %>
+        </div>
     </div>
 
     <%= _.template(require('./../includes/footer.html').default)(data) %>
