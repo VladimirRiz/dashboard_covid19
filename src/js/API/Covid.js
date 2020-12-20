@@ -3,7 +3,7 @@ class Covid {
     this.error = error,
     this.ok = ok,
     this.status = status,
-    this.data = data,
+    this.data = data
   }
 
   getData() {
