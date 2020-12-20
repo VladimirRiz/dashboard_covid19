@@ -1,7 +1,5 @@
-const navList = document.querySelector('.navigation_list');
-const navButton = document.querySelector('.navigation_button');
+import {toggleClassesNavigation} from "./nav";
 
-navButton.addEventListener('click', () => {
-    navButton.classList.toggle('change');
-    navList.classList.toggle('active');
-})
+toggleClassesNavigation()
+
+
