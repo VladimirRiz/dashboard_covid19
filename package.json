@@ -4,6 +4,8 @@
   "description": "HTML template",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
     "dev": "webpack --mode development",
     "watch": "webpack --mode development --watch",
     "start": "webpack-dev-server --mode development --open",
@@ -23,6 +25,9 @@
     "css-loader": "^5.0.1",
     "cssnano": "^4.1.10",
     "del-cli": "^3.0.1",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "html-webpack-plugin": "^5.0.0-alpha.17",
     "mini-css-extract-plugin": "^1.3.3",
     "node-sass": "^5.0.0",
