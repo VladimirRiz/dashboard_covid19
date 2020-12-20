@@ -1,0 +1,31 @@
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    overflow-y: hidden;
+    &__info{
+      display: grid;
+      height: 100%;
+      min-height: 300px;
+      grid-template-columns: 220px 1fr 220px;
+      background: $grey-l;
+    }
+    .recovered,.death,.cases{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: .5rem;
+      background-color: $dark-slate-grey;
+      .open{
+        padding: .2rem;
+        &__button{
+          width: 20px;
+          height: 20px;
+          background: url("../img/fit-to-width.png")no-repeat center center ;
+          background-size: cover;
+        }
+      }
+    }
+  }
