@@ -42,7 +42,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "toggleClassesNavigation": () => /* binding */ toggleClassesNavigation
 /* harmony export */ });
 const toggleClassesNavigation = () => {
-    const navList = document.querySelector('.navigation_list');
+    const navList = document.querySelector('.navigation__list_wrapper');
     const navButton = document.querySelector('.navigation_button');
     
     navButton.addEventListener('click', () => {

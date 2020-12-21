@@ -1,5 +1,5 @@
 export const toggleClassesNavigation = () => {
-    const navList = document.querySelector('.navigation_list');
+    const navList = document.querySelector('.navigation__list_wrapper');
     const navButton = document.querySelector('.navigation_button');
     
     navButton.addEventListener('click', () => {
