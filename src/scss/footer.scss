@@ -1,0 +1,39 @@
+.footer {
+    background-color: #000;
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+   align-items: center;
+   position: relative;
+   width: 100%;
+}
+
+.footer__navigation {
+ display: flex;
+}
+
+.footer__navigation-link a{
+ list-style: none;
+ padding: 0 20px;
+ font-style: normal;
+ font-weight: normal;
+ font-size: 14px;
+ line-height: 140%;
+ align-items: center;
+ color: #FFFFFF;
+ height: 95px;
+ margin-left: 20px;
+}
+
+.logo-footer {
+ background: url("https://rs.school/images/rs_school_js.svg") no-repeat;
+ width: 100px;
+ height: 45px;
+ position: absolute;
+ right: 10%;
+ mix-blend-mode: difference;
+ filter: invert(1);
+ cursor: pointer;
+}
+
+
