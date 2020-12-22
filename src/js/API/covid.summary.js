@@ -5,17 +5,16 @@ async function getCovidSummary() {
   try {
     const response = await fetch(url);
     const content = await response.json();
-    return new Covid(content);
-
+    return new Covid({
+      error: null,
+      data: content,
+    });
   } catch (error) {
     return new Covid({
       error,
-      ok: false,
-      status: 500,
-    })
+      data: null,
+    });
   }
 }
 
-export {
-  getCovidSummary,
-};
+export default getCovidSummary;

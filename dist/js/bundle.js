@@ -1,0 +1,2 @@
+(()=>{"use strict";(()=>{const t=class{constructor({error:t,data:r}){this.error=t,this.data=r}getData(){return this.data}};const r=async function(){try{const r=await fetch("https://api.covid19api.com/summary"),a=await r.json();return new t({error:null,data:a})}catch(r){return new t({error:r,data:null})}}();console.log(r)})()})();
+//# sourceMappingURL=bundle.js.map

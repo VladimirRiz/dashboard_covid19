@@ -1,9 +1,7 @@
 class Covid {
-  constructor({ error, ok, status, data }) {
-    this.error = error,
-    this.ok = ok,
-    this.status = status,
-    this.data = data
+  constructor({ error, data }) {
+    this.error = error;
+    this.data = data;
   }
 
   getData() {
