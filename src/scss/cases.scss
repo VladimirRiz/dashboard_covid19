@@ -1,0 +1,19 @@
+.cases{
+    &__info{
+        overflow-x: scroll;
+        height: 300px;
+        background-color: $color-dark-slate-grey;
+        .country{
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $color-white;
+            .number{
+                color:$color-green-yellow ;
+            }
+            .name{
+                color: $color-white;
+            }
+        }
+    }
+}
