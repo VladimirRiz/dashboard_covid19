@@ -48,10 +48,35 @@ function cases() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cases__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cases */ "./src/js/cases.js");
+/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav */ "./src/js/nav.js");
+
 
 
 (0,_cases__WEBPACK_IMPORTED_MODULE_0__.default)();
+(0,_nav__WEBPACK_IMPORTED_MODULE_1__.toggleClassesNavigation)();
 
+
+/***/ }),
+
+/***/ "./src/js/nav.js":
+/*!***********************!*\
+  !*** ./src/js/nav.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toggleClassesNavigation": () => /* binding */ toggleClassesNavigation
+/* harmony export */ });
+const toggleClassesNavigation = () => {
+    const navList = document.querySelector('.navigation__list_wrapper');
+    const navButton = document.querySelector('.navigation_button');
+    
+    navButton.addEventListener('click', () => {
+        navButton.classList.toggle('change');
+        navList.classList.toggle('active');
+    })
+};
 
 /***/ })
 
