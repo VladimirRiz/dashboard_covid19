@@ -1,3 +1,5 @@
+import { filterCountries } from './filter';
+
 export default function cases() {
   const casesInfo = document.querySelector('.cases__info');
   const getCountry = fetch('https://api.covid19api.com/summary');
@@ -8,5 +10,5 @@ export default function cases() {
       arr.forEach((x) => {
         casesInfo.insertAdjacentHTML('beforeend', `<div class="country"><p class="number">${x.TotalConfirmed}</p><p class="name">${x.Country}</p></div>`);
       });
-    });
+    }).then(() => filterCountries());
 }
