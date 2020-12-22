@@ -5,10 +5,9 @@ export const filterCountries = () => {
   const updateValue = ({ target }) => {
     const { value } = target;
     countries.forEach((country) => {
-      const name = country.querySelector('.name').textContent;
-      if (name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
-        country.style.display = 'flex';
-      } else country.style.display = 'none';
+      const name = country.querySelector('.name').textContent.toLowerCase();
+      const hasLetters = (name.indexOf(value.toLowerCase()) > -1);
+      country.style.display = hasLetters ? 'flex' : 'none';
     });
   };
   input.addEventListener('input', updateValue);
