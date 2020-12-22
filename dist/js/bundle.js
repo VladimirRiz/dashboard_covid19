@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/scss/style.scss":
@@ -7,9 +8,34 @@
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/js/cases.js":
+/*!*************************!*\
+  !*** ./src/js/cases.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ cases
+/* harmony export */ });
+function cases() {
+  const casesInfo = document.querySelector('.cases__info');
+  const getCountry = fetch('https://api.covid19api.com/summary');
+  getCountry.then((response) => response.json())
+    .then(({ Countries }) => {
+      const arr = [...Countries];
+      arr.sort((a, b) => ((a.TotalConfirmed < b.TotalConfirmed) ? 1 : -1));
+      arr.forEach((x) => {
+        casesInfo.insertAdjacentHTML('beforeend', `<div class="country"><p class="number">${x.TotalConfirmed}</p><p class="name">${x.Country}</p></div>`);
+      });
+    });
+}
 
 
 /***/ }),
@@ -18,9 +44,39 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _cases__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cases */ "./src/js/cases.js");
+/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav */ "./src/js/nav.js");
 
 
+
+(0,_cases__WEBPACK_IMPORTED_MODULE_0__.default)();
+(0,_nav__WEBPACK_IMPORTED_MODULE_1__.toggleClassesNavigation)();
+
+
+/***/ }),
+
+/***/ "./src/js/nav.js":
+/*!***********************!*\
+  !*** ./src/js/nav.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toggleClassesNavigation": () => /* binding */ toggleClassesNavigation
+/* harmony export */ });
+const toggleClassesNavigation = () => {
+    const navList = document.querySelector('.navigation__list_wrapper');
+    const navButton = document.querySelector('.navigation_button');
+    
+    navButton.addEventListener('click', () => {
+        navButton.classList.toggle('change');
+        navList.classList.toggle('active');
+    })
+};
 
 /***/ })
 
@@ -50,6 +106,23 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -65,8 +138,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module
 /******/ 	__webpack_require__("./src/js/index.js");
-/******/ 	__webpack_require__("./src/scss/style.scss");
 /******/ 	// This entry module used 'exports' so it can't be inlined
+/******/ 	__webpack_require__("./src/scss/style.scss");
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map
