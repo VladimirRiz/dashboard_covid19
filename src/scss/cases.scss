@@ -31,3 +31,16 @@
     color: $color-light;
     
 }
+
+.global__cases {
+    border-bottom: 1px solid $color-light;
+    padding-bottom: 10px;
+}
+
+.title {
+    padding-top: 10px;
+}
+
+.text-danger {
+    color: $color-danger;
+}
