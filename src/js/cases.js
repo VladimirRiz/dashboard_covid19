@@ -1,4 +1,5 @@
 import { filterCountries } from './filter';
+import { fullWidth } from './full-width';
 
 export default function cases() {
   const casesInfo = document.querySelector('.cases__info');
@@ -10,5 +11,6 @@ export default function cases() {
       arr.forEach((x) => {
         casesInfo.insertAdjacentHTML('beforeend', `<div class="country"><p class="number">${x.TotalConfirmed}</p><p class="name">${x.Country}</p></div>`);
       });
-    }).then(() => filterCountries());
+    }).then(() => filterCountries())
+    .then(() => fullWidth());
 }

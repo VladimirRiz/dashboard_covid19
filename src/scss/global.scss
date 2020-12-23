@@ -21,6 +21,8 @@ body {
   width: 100%;
   min-height: 100vh;
   font-family: $font-stack;
+  background-color: $color-black;
+  color: $color-light;
   #logo {
     width: 10rem;
   }
@@ -28,8 +30,26 @@ body {
 
 button{
   outline: none;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 ul{
   list-style: none;
+}
+
+input {
+  margin: 10px!important;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.none{
+  display: none;
 }
