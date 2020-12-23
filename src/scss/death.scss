@@ -1,0 +1,21 @@
+.death {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  margin: .5rem;
+  background-color: rgb(30, 30, 34);
+  color: whitesmoke;
+  border: 1px solid rgb(46, 45, 45);
+  & .global-deaths {
+    border: 1px solid rgb(46, 45, 45);
+  }
+  & .countries-deaths {
+    height: 300px;
+    overflow-y: scroll;
+
+    & .country {
+      margin: 10px 0;
+      border: 1px solid rgb(46, 45, 45);
+    }
+  }
+}
