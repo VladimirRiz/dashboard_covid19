@@ -1,19 +1,33 @@
 .cases{
     &__info{
-        overflow-x: scroll;
+        overflow-y: scroll;
         height: 300px;
-        background-color: $color-dark-slate-grey;
+        background-color: $color-dark-grey;
+
         .country{
             padding: 1rem 0;
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid $color-white;
+            border-bottom: 1px solid $color-light;
+
             .number{
-                color:$color-green-yellow ;
+                color: $color-danger;
             }
+
             .name{
-                color: $color-white;
+                color: $color-light;
+                padding-right: 0.2rem;
             }
         }
     }
+}
+
+.filter__cases {
+    background-color: transparent;
+    width: 80%;
+    border: 1px solid $color-light;
+    border-radius: 10px;
+    padding: 3px 7px;
+    color: $color-light;
+    
 }

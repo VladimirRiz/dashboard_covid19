@@ -31,7 +31,7 @@ class Covid {
   }
 
   set() {
-    const death = document.querySelector('.death');
+    const death = document.querySelector('.death .info');
 
     const container = document.createElement('div');
     container.innerHTML = `
@@ -49,7 +49,7 @@ class Covid {
       </div>
     `;
 
-    death.append(container);
+    death.appendChild(container);
   }
 
   error() {
@@ -115,6 +115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => /* binding */ cases
 /* harmony export */ });
 /* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filter */ "./src/js/filter.js");
+/* harmony import */ var _full_width__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./full-width */ "./src/js/full-width.js");
+
 
 
 function cases() {
@@ -127,7 +129,8 @@ function cases() {
       arr.forEach((x) => {
         casesInfo.insertAdjacentHTML('beforeend', `<div class="country"><p class="number">${x.TotalConfirmed}</p><p class="name">${x.Country}</p></div>`);
       });
-    }).then(() => (0,_filter__WEBPACK_IMPORTED_MODULE_0__.filterCountries)());
+    }).then(() => (0,_filter__WEBPACK_IMPORTED_MODULE_0__.filterCountries)())
+    .then(() => (0,_full_width__WEBPACK_IMPORTED_MODULE_1__.fullWidth)());
 }
 
 
@@ -164,6 +167,41 @@ const filterCountries = () => {
 
 /***/ }),
 
+/***/ "./src/js/full-width.js":
+/*!******************************!*\
+  !*** ./src/js/full-width.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fullWidth": () => /* binding */ fullWidth,
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+const fullWidth = () => {
+  const openButton = document.querySelectorAll('.open__button');
+  const allBlocks = document.querySelectorAll('.block');
+  const mainContainer = document.querySelector('.container__info');
+
+  openButton.forEach((button) => {
+    button.addEventListener('click', ({ target }) => {
+      const parent = target.parentNode.parentNode;
+      const parentClass = (parent.className).replace(/block/g, '').replace(/\s/, '');
+      allBlocks.forEach((block) => {
+        const hasClass = block.classList.contains(parentClass);
+        if (!hasClass) block.classList.toggle('none');
+      });
+      mainContainer.classList.toggle('one-column');
+      console.log(parentClass);
+    });
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fullWidth);
+
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -193,17 +231,21 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "toggleClassesNavigation": () => /* binding */ toggleClassesNavigation
+/* harmony export */   "toggleClassesNavigation": () => /* binding */ toggleClassesNavigation,
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 const toggleClassesNavigation = () => {
-    const navList = document.querySelector('.navigation__list_wrapper');
-    const navButton = document.querySelector('.navigation_button');
-    
-    navButton.addEventListener('click', () => {
-        navButton.classList.toggle('change');
-        navList.classList.toggle('active');
-    })
+  const navList = document.querySelector('.navigation__list_wrapper');
+  const navButton = document.querySelector('.navigation_button');
+
+  navButton.addEventListener('click', () => {
+    navButton.classList.toggle('change');
+    navList.classList.toggle('active');
+  });
 };
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleClassesNavigation);
+
 
 /***/ })
 

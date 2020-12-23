@@ -15,7 +15,9 @@
 </head>
 
 <body>
-  <header>COVID-19</header>
+  <header>
+    <h1>COVID-19 Dashboard</h1>
+  </header>
 
     <div class="container">
       <nav class="navigation">
@@ -36,19 +38,19 @@
     </div>
 </nav>
         <div class="container__info">
-          <div class="cases">
+          <div class="cases block">
     <div class="info">
-        <h3>Cases by Country/Region/Sovereignty</h3>
-        <input type="text" class="filter__cases">
+        <div>Cases by Country/Region/Sovereignty</div>
+        <input type="text" class="filter__cases  mx-auto" placeholder="Search country">
         <div class="cases__info">
 
         </div>
-        <div class="open">
-            <button class="open__button"></button>
-        </div>
+    </div>
+    <div class="open">
+        <button class="open__button"></button>
     </div>
 </div>
-            <div class="death">
+            <div class="death block">
     <div class="info">
         Death
     </div>
@@ -57,7 +59,7 @@
     </div>
 </div>
               <div class="two-blocks">
-                <div class="recovered">
+                <div class="recovered block">
     <div class="info">
         recovered
     </div>
@@ -65,7 +67,7 @@
         <button class="open__button"></button>
     </div>
 </div>
-                  <div class="daily-cases">
+                  <div class="daily-cases block">
     daily cases
     <div class="open">
         <button class="open__button"></button>
@@ -76,8 +78,22 @@
 
     </div>
 
-        <footer>Vladimir Riz</footer>
-
-    <script src="js/bundle.js"></script>
-  </body>
+    <footer class="footer">
+  <div class="logo-footer"></div>
+  <nav>
+      <ul class="footer__navigation">
+          <li class="footer__navigation-link">
+            <a href="https://github.com/VladimirRiz/" target="_blank">VladimirRiz</a>
+          </li>
+          <li class="footer__navigation-link">
+            <a href="https://github.com/mrinex" target="_blank">Mrinex</a>
+          </li>
+          <li class="footer__navigation-link">
+            <a href="https://github.com/perloten/" target="_blank">Perloten</a>
+          </li>
+      </ul>
+  </nav>
+</footer>
+<script src="js/bundle.js"></script>
+</body>
 </html>
