@@ -7,7 +7,8 @@
   // color: whitesmoke;
   // border: 1px solid rgb(46, 45, 45);
   & .global-deaths {
-    border: 1px solid rgb(46, 45, 45);
+    border-bottom: 1px solid $color-light;
+    padding-bottom: 10px;
   }
   & .countries-deaths {
     height: 300px;
@@ -15,7 +16,8 @@
 
     & .country {
       margin: 10px 0;
-      border: 1px solid rgb(46, 45, 45);
+      border-bottom: 1px solid $color-light;
+      padding-bottom: 10px;
     }
   }
 }
