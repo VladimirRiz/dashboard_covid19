@@ -14,6 +14,96 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/API/Covid.js":
+/*!*****************************!*\
+  !*** ./src/js/API/Covid.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+class Covid {
+  constructor({ error, data }) {
+    this.error = error;
+    this.data = data;
+  }
+
+  set() {
+    const death = document.querySelector('.death');
+
+    const container = document.createElement('div');
+    container.innerHTML = `
+      <div class="global-deaths">
+        <h4>Global Deaths</h4>
+        <h1>${this.data.Global.TotalDeaths}</h1>
+      </div>
+      <div class="countries-deaths">
+        ${this.data.Countries.map((node) => `
+            <div class="country">
+              <h3>${node.TotalDeaths} deaths</h3>
+              <h4>${node.Country}</h4>
+            </div>
+          `).join(' ')}
+      </div>
+    `;
+
+    death.append(container);
+  }
+
+  error() {
+    const death = document.querySelector('.death');
+
+    const container = document.createElement('div');
+    container.innerHTML = `error get data: ${this.error}`;
+
+    death.append(container);
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Covid);
+
+
+/***/ }),
+
+/***/ "./src/js/API/covid.summary.js":
+/*!*************************************!*\
+  !*** ./src/js/API/covid.summary.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _Covid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Covid */ "./src/js/API/Covid.js");
+
+
+async function covidSummary() {
+  const url = 'https://api.covid19api.com/summary';
+  try {
+    const response = await fetch(url);
+    const content = await response.json();
+    const summary = new _Covid__WEBPACK_IMPORTED_MODULE_0__.default({
+      error: null,
+      data: content,
+    });
+    summary.set();
+  } catch (error) {
+    const summary = new _Covid__WEBPACK_IMPORTED_MODULE_0__.default({
+      error,
+      data: null,
+    });
+    summary.error();
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (covidSummary);
+
+
+/***/ }),
+
 /***/ "./src/js/cases.js":
 /*!*************************!*\
   !*** ./src/js/cases.js ***!
@@ -82,12 +172,15 @@ const filterCountries = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cases__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cases */ "./src/js/cases.js");
-/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav */ "./src/js/nav.js");
+/* harmony import */ var _API_covid_summary__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./API/covid.summary */ "./src/js/API/covid.summary.js");
+/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav */ "./src/js/nav.js");
+
 
 
 
 (0,_cases__WEBPACK_IMPORTED_MODULE_0__.default)();
-(0,_nav__WEBPACK_IMPORTED_MODULE_1__.toggleClassesNavigation)();
+(0,_API_covid_summary__WEBPACK_IMPORTED_MODULE_1__.default)();
+(0,_nav__WEBPACK_IMPORTED_MODULE_2__.toggleClassesNavigation)();
 
 
 /***/ }),
