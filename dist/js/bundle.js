@@ -31,7 +31,7 @@ class Covid {
   }
 
   set() {
-    const death = document.querySelector('.death');
+    const death = document.querySelector('.death .info');
 
     const container = document.createElement('div');
     container.innerHTML = `
@@ -49,7 +49,7 @@ class Covid {
       </div>
     `;
 
-    death.append(container);
+    death.appendChild(container);
   }
 
   error() {
